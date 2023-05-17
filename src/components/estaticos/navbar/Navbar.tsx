@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Box } from '@material-ui/core'
 import './Navbar.css'
+import { Link } from 'react-router-dom';
 
 function Navbar() {
 
@@ -15,14 +16,21 @@ function Navbar() {
                     </Box>
 
                     <Box display="flex" justifyContent="start">
-                        <Box mx={1} style={{ cursor: "pointer" }} />
+                        <Link to='/home' className='text-decorator-none'>
+                        <Box mx={1} style={{ cursor: "pointer" }} >
                         <Typography variant="h6" color="inherit">
                             home
                         </Typography>
                     </Box>
+                    </Link>
+                    <Box mx={1} style={{ cursor: "pointer" }} >
+                        <Typography variant="h6" style={{color: "yellow"}}>
+                            Criar Postagem
+                        </Typography>
+                    </Box>
                     <Box mx={1} style={{ cursor: "pointer" }} >
                         <Typography variant="h6" color="inherit">
-                            postagem
+                            postagens
                         </Typography>
                     </Box>
                     <Box mx={1} style={{ cursor: "pointer" }} >
@@ -35,11 +43,15 @@ function Navbar() {
                             cadastar temas
                         </Typography>
                     </Box>
+                    <Link to='/login' className='text-decorator-none'>
                     <Box mx={1} style={{ cursor: "pointer" }} >
                         <Typography variant="h6" color="inherit">
                             logout
                         </Typography>
                     </Box >
+                    </Link>
+                    </Box >
+                
 
                 </Toolbar >
             </AppBar >
