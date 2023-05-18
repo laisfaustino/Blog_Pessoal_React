@@ -1,6 +1,6 @@
 import React from 'react';
 
-<Link to="/home" className='link'>
+
 function Login(){
     return(
         <>
