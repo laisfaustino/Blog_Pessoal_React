@@ -3,6 +3,7 @@ import { Typography, Grid, Button } from '@material-ui/core';
 import { Box } from '@mui/material';
 import './Home.css';
 import Carrossel from '../../components/carrossel/Carrossel';
+import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
 
 function Home() {
     return (
@@ -29,6 +30,7 @@ function Home() {
                     <img src="https://media4.giphy.com/media/lOaf0LBA2mluwm8cY8/giphy.gif" alt="" width="400px" height="400px" />
                 </Grid>
                 <Grid xs={12} className='postagens'>
+                    <TabPostagem/>
                 </Grid>
             </Grid>
 
