@@ -6,6 +6,7 @@ import './App.css'
 import Home from './paginas/home/Home';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './paginas/login/Login';
+import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
                <Route path="/" element={<Home />} />
                <Route path="/home" element={<Home />} />
                <Route path="/login" element={<Login />}/>
+               <Route path="/cadastrousuario" element={<CadastroUsuario/>} />
             </Routes>
             <Footer />
          </BrowserRouter>

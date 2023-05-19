@@ -1,5 +1,18 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.caixa{
+    background-color: indigo;
+}
+
+.titulo{
+   color: white !important;
+   font-weight: bold !important;
+}
+
+.botao{
+    border-color: white !important;
+    background-color:blueviolet;
+    color: white !important;
+}
+
+.postagens{
+    background-color: white;
 }
