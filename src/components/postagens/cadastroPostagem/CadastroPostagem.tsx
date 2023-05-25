@@ -8,6 +8,7 @@ import Postagem from '../../../models/Postagem';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import { UserState } from '../../../store/token/Reducer';
 import { useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 
 function CadastroPostagem() {
     let navigate = useNavigate();
@@ -16,9 +17,22 @@ function CadastroPostagem() {
     //const [token, setToken] = useLocalStorage('token');
     const token = useSelector <UserState, UserState["tokens"]>((state) => state.tokens)
 
+    const userId = useSelector<UserState, UserState["id"]>(
+        (state) => state.id
+    )
+
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.error('Você precisa estar logado', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
             navigate("/login")
 
         }
@@ -29,17 +43,28 @@ function CadastroPostagem() {
             id: 0,
             descricao: ''
         })
-    const [postagem, setPostagem] = useState<Postagem>({
-        id: 0,
-        titulo: '',
-        texto: '',
-        tema: null
-    })
+        const [user, setUser] = useState<User>({
+            id: + userId,
+            nome: '',
+            usuario: '',
+            senha: '',
+            foto: ''
+        })
+    
+        const [postagem, setPostagem] = useState<Postagem>({
+            id: 0,
+            titulo: '',
+            texto: '',
+            data: '',
+            tema: null,
+            usuario: null
+        })
 
     useEffect(() => { 
         setPostagem({
             ...postagem,
-            tema: tema
+            tema: tema,
+            usuario: user,
         })
     }, [tema])
 
@@ -85,14 +110,32 @@ function CadastroPostagem() {
                     'Authorization': token
                 }
             })
-            alert('Postagem atualizada com sucesso');
+            toast.success('Postagem atualizada com sucesso', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
         } else {
             post(`/postagens`, postagem, setPostagem, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Postagem cadastrada com sucesso');
+            toast.success('Postagem cadastrada com sucesso', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
         }
         back()
 

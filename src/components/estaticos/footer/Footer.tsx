@@ -5,12 +5,12 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import {Typography, Grid } from '@material-ui/core';
 import {Box} from '@mui/material';
 import './Footer.css';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/token/Reducer';
 
 function Footer() {
 
-    const dispatch = useDispatch()
+    
     const token = useSelector <UserState, UserState["tokens"]>((state) => state.tokens)
 
     var footerComponent;
