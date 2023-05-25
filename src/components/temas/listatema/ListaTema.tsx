@@ -7,15 +7,20 @@ import './ListaTema.css';
 import useLocalStorage from 'react-use-localstorage';
 import {useNavigate} from 'react-router-dom';
 import { busca } from '../../../services/Service';
+import { useSelector } from 'react-redux';
+import { UserState } from '../../../store/token/Reducer';
 
 function ListaTema() {
   const [temas, setTemas] = useState<Tema[]>([])
-  const [token, setToken] = useLocalStorage('token');
+  //const [token, setToken] = useLocalStorage('token');
+  const token = useSelector<UserState, UserState["tokens"]>(
+    (state) => state.tokens
+  )
   let navigate = useNavigate();
 
   useEffect(()=>{
     if(token == ''){
-      alert("Você precisa estar logado")
+      alert("Você precisa estar logado para acessar os temas!")
       navigate("/login")
     }
   }, [token])

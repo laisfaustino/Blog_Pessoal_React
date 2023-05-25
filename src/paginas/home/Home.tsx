@@ -7,12 +7,17 @@ import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
 import { useNavigate } from 'react-router';
 import useLocalStorage from 'react-use-localstorage';
+import { UserState } from '../../store/token/Reducer';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 
 function Home() {
 
     let navigate = useNavigate();
-    const [token, setToken] = useLocalStorage('token');
+    //const [token, setToken] = useLocalStorage('token');
+
+    const token = useSelector <UserState, UserState["tokens"]>((state) => state.tokens)
     
     useEffect(() => {
       if (token == "") {
@@ -40,7 +45,9 @@ function Home() {
                         <Box marginRight={1}>
                         <ModalPostagem />
                         </Box>
+                        <Link to='/postagens' className="text-decorator-none">
                         <Button variant="outlined" className='botao'>Ver Postagens</Button>
+                        </Link>
                     </Box>
                 </Grid>
                 <Grid item xs={6} >
