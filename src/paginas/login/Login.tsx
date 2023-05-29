@@ -16,7 +16,6 @@ function Login() {
 
 const dispatch = useDispatch();
 
-const[token, setToken] = useState("");
 
 
     const [userLogin, setUserLogin] = useState<UserLogin>(
@@ -24,7 +23,9 @@ const[token, setToken] = useState("");
             id: 0,
             usuario: '',
             senha: '',
-            token: ''
+            token: '',
+            foto:'',
+            nome:''
         })
 
         const [respUserLogin, setRespUserLogin] = useState<UserLogin>({

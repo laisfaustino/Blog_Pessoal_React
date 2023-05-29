@@ -1,5 +1,5 @@
 .caixa{
-    background-color: indigo;
+    background-color: #ba01ff;
 }
 
 .titulo{
@@ -9,7 +9,7 @@
 
 .botao{
     border-color: white !important;
-    background-color:blueviolet;
+    background-color:#DDA0DD;
     color: white !important;
 }
 

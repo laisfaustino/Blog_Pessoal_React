@@ -38,11 +38,11 @@ function Home() {
   }, [token])
     return (
         <>
-        <Grid container style={{ marginTop: "8px" }}>
-                <Grid item xs={12}>
+        {/*<Grid container style={{ marginTop: "8px" }}>
+                <Grid item xs={3}>
                     <Carrossel />
                 </Grid>
-            </Grid>
+            </Grid>*/}
 
             <Grid container direction="row" justifyContent="center" alignItems="center" className='caixa'>
                 <Grid alignItems="center" item xs={6}>

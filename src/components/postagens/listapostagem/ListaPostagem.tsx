@@ -2,20 +2,23 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Postagem from '../../../models/Postagem';
 import { busca } from '../../../services/Service'
-import {Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
-import {Box} from '@mui/material';
+import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
+import { Box } from '@mui/material';
 import './ListaPostagem.css';
 import useLocalStorage from 'react-use-localstorage';
 import { useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { UserState } from '../../../store/token/Reducer';
 import { toast } from 'react-toastify';
+import { addToken } from '../../../store/token/Actions';
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([])
   //const [token, setToken] = useLocalStorage('token');
 
-  const token = useSelector <UserState, UserState["tokens"]>((state) => state.tokens)
+  const dispatch = useDispatch()
+
+  const token = useSelector<UserState, UserState["tokens"]>((state) => state.tokens)
 
   let navigate = useNavigate();
 
@@ -30,7 +33,7 @@ function ListaPostagem() {
         draggable: false,
         theme: "colored",
         progress: undefined,
-    });
+      });
       navigate("/login")
 
     }
@@ -42,6 +45,7 @@ function ListaPostagem() {
         'Authorization': token
       }
     })
+    console.log(token.length)
   }
 
   useEffect(() => {

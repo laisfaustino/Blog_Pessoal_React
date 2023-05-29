@@ -37,10 +37,10 @@ function Navbar() {
     if(token !== ''){
         navbarComponent =
     
-            <AppBar id="bar" position="static">
+            <AppBar id="bar" position="static" >
                 <Toolbar variant="dense">
-                    <Box style={{ cursor: "pointer" }}>
-                        <Typography variant="h5" color="inherit">
+                    <Box style={{ cursor: "pointer" }} >
+                        <Typography variant="h5" color="inherit" >
                             BlogPessoal
                         </Typography>
                     </Box>

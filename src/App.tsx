@@ -21,6 +21,8 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
 
+    <>
+
     <Provider store={store}>
       <ToastContainer />
 
@@ -46,6 +48,7 @@ function App() {
       <Footer />
     </Router>
     </Provider>
+    </>
 
   );
 }

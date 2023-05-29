@@ -1,11 +1,18 @@
 
 #bar{
-    background-color: blueviolet;
+    background-color: #ff0092;
+    align-items: center;
+    
+    
 }
 
 
 .text-decorator-none{
     text-decoration: none;
     color: white;
-   
+    
 }
+
+
+
+

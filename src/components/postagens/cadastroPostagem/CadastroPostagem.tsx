@@ -9,6 +9,7 @@ import { busca, buscaId, post, put } from '../../../services/Service';
 import { UserState } from '../../../store/token/Reducer';
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
+import User from '../../../models/User';
 
 function CadastroPostagem() {
     let navigate = useNavigate();
