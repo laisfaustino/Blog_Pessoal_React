@@ -48,7 +48,7 @@ function Home() {
                 <Grid alignItems="center" item xs={6}>
                     <Box paddingX={20} >
                         <Typography variant="h4" gutterBottom color="textPrimary" component="h4" align="center" className='titulo'>Seja bem vindo(a)!</Typography>
-                        <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className='titulo'>Seja cacto quando preciso, porém floresça quando chegar a sua hora.</Typography>
+                        <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className='titulo'>Seja cacto quando preciso, porém floresça quando chegar a sua hora!</Typography>
                     </Box>
                     
                     <Box display="flex" justifyContent="center">
